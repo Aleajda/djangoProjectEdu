@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'flatpages/default.html' %}
+<head>
+    <meta charset="UTF-8">
+    <title>Ошибка доступа к правам</title>
+</head>
+<body>
+{% block content %}
+    {% if not_your_publication %} <!-- есть права автора, но публикация чужая -->
+        <h3 style="margin-left: 15px"> Чужие публикации удалять, редактировать нельзя. </h3>
+        {% else %}
+            <h3 style="margin-left: 15px">К сожалению у Вас нет прав на осуществление данного действия.</h3>
+    {% endif %}
+<a href="{% url 'main_page' %}" style="margin-left: 15px; font-size: xx-large">На главную страницу.</a>
+{% endblock content %}
+</body>
+</html>

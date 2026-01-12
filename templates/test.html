@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+{#{% extends 'flatpages/default.html' %}#}
+{% load filter %}
+{% load custom_tags %}
+<head>
+    <meta charset="UTF-8">
+    <title>Список публикаций за неделю</title>
+</head>
+<body>
+{#{% block content %}#}
+{#<table class="table-bordered" style=" border-color: #6a1a21; border-width: 5px">#}
+{#{% for post in posts  %}#}
+{#    <tr style="background-color: {% cycle 'grey' 'red' %}" >#}
+{#        <td>{{post.author}}</td>#}
+{#        <td>{{post.title}}</td>#}
+{#    </tr>#}
+{#{% endfor %}#}
+{#</table><br>#}
+{#count = {{ count }}#}
+
+{% for i in posts %}
+    {{ i.1 }}<br>
+{% endfor %}
+<br><br>
+{{ kwg }}
+
+{#{% endblock %}#}
+</body>
+</html>

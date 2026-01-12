@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mail message_template</title>
+</head>
+<body> <!-- шаблон сообщения подписчикам о выходе публикации -->
+    <p style="margin-left: 10px; font-size: larger">        
+        Здравствуй, <i><b style="color: forestgreen">{{ username }}!</b></i><br>
+        Рады сообщить, о выходе новой публикации с названием <b style="color: #6a1a21 ">"{{ post_title }}"</b><br>
+        Новая публикация в твоём любимом разделе!<br>
+        <b>Краткая выдержка:</b><br>
+        <i style="margin-left: 10px"> {{ post_content|truncatechars:50 }}</i><br>                 
+        <a href="http://127.0.0.1:8000/news/{{ post_pk }}">Посмотреть статью</a>
+    </p>
+</body>
+</html>

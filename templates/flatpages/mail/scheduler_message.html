@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Список публикаций за неделю</title>
+</head>
+<body>
+Уважаемый {{ username }}!
+Предлагаем Вашему вниманию список публикаций, относящиеся к категориям, на которые Вы подписаны:
+<p style="font-style: italic">
+{% for i in post %}
+    <a href="http://127.0.0.1:8000/news/{{ i.0 }}">{{ i.1 }}</a><br>
+{% endfor %}
+</p>
+</body>
+</html>

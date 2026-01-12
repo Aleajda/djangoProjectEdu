@@ -1,0 +1,9 @@
+{% extends "account/email/base_message.txt" %}
+{% load account %}
+{% load i18n %}
+
+{% block content %}{% autoescape off %}{% user_display user as user_display %}{% blocktrans with site_name=current_site.name site_domain=current_site.domain %}
+Уважаемый {{ user_display }}!
+На сайте {{ site_domain }} Вы прошли регистрацию. Мы рады приветствовать Вас в системе "News_portal"!
+Для окончательной верификации Вашей электронной почты, пройдите, пожалуйста, по этой ссылке: {{ activate_url }}
+{% endblocktrans %} {% endautoescape %} {% endblock content %}
